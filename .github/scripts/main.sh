@@ -8,6 +8,6 @@ project_name="i-notes-backend"
 service_name="backend"
 
 cd "$project_dir/$project_name"
-git pull main
+git pull
 
 docker-compose restart "$service_name"
