@@ -3,7 +3,7 @@
 # 项目路径
 project_dir="/var/www/i-notes"
 # 服务名
-service_name="frontend"
+service_name="backend"
 
 cd "$project_dir"
 
