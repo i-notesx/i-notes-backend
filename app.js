@@ -12,6 +12,11 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello from backend!" });
 });
 
+app.get("/login", (req, res) => {
+  res.json({ message: "登录成功! (测试接口)" });
+});
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
