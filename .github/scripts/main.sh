@@ -11,4 +11,5 @@ cd "$project_dir/$project_name"
 git pull
 
 cd "$project_dir"
-docker-compose restart "$service_name"
+docker-compose build "$service_name"
+docker-compose up -d "$service_name"
