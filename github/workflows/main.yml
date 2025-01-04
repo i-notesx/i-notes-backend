@@ -8,12 +8,14 @@ on:
 jobs: 
   deploy:
     name: deploy 
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: ssh connection 
-      uses: appleboy/ssh-action@1.2.0
-      with:
-        host: ${{ secretes.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY}}
-        script_path: scripts/main.sh
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY}}
+          script_path: ".github/scripts/main.sh"
