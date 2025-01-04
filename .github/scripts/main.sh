@@ -10,4 +10,5 @@ service_name="backend"
 cd "$project_dir/$project_name"
 git pull
 
+cd "$project_dir"
 docker-compose restart "$service_name"
