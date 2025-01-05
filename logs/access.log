@@ -1,0 +1,2 @@
+::1 - - [05/Jan/2025:09:10:56 +0000] "GET /api/v1/user/info HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+::1 - - [05/Jan/2025:09:11:51 +0000] "GET /api/v1/user/info?a=1&b=2&b=3 HTTP/1.1" 200 63 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
