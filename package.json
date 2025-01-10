@@ -6,7 +6,10 @@
   "type": "module",
   "scripts": {
     "start": "nodemon app.js",
-    "start:prod": "nodemon app.js"
+    "start:prod": "nodemon app.js",
+    "docker:dev": "docker-compose up",
+    "docker:prod": "docker-compose up -f docker-compose.yml -f docker-compose.prod.yml",
+    "docker:down": "docker-compose down"
   },
   "author": "",
   "license": "ISC",
