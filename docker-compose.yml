@@ -8,19 +8,14 @@ services:
       - NODE_ENV=development
     networks:
       - app-network # 用于容器中的通信。多个服务有用
-    develop:
-      watch:
-        - action: sync
-          path: ./src
-          target: /app/src
   mongo:
     image: mongo:latest
     container_name: mongbodb
     ports:
       - "27017:27017"
-    # environment: 
-    #   - MONGO_INITDB_ROOT_USERNAME=${DB_USER}
-    #   - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD}
+    environment: 
+      - MONGO_INITDB_ROOT_USERNAME=${DB_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD}
     volumes:
       - mongodb_data:/data/db
     networks:
