@@ -1,7 +1,16 @@
 
 services:
-  develop:
-      watch:
-        - action: sync
-          path: ./src
-          target: /app/src
+  web:
+    ports:
+      - "3000:3000"
+    develop:
+        watch:
+          - action: sync
+            path: ./src
+            target: /app/src
+  mongo:
+    ports:
+      - "27017:27017"
+  mongo-express:
+    ports:
+      - 8081:8081

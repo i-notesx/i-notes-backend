@@ -1,18 +1,14 @@
-version: '3'
+
 services:
   web:
     build: .
-    ports:
-      - "3000:3000"
     environment:
       - NODE_ENV=development
     networks:
       - app-network # 用于容器中的通信。多个服务有用
   mongo:
+    container_name: mongo
     image: mongo:latest
-    container_name: mongbodb
-    ports:
-      - "27017:27017"
     environment: 
       - MONGO_INITDB_ROOT_USERNAME=${DB_USER}
       - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD}
@@ -22,12 +18,11 @@ services:
       - app-network
   mongo-express:
     image: mongo-express
-    ports:
-      - 8081:8081
     environment:
       - ME_CONFIG_MONGODB_PORT=27017
-      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
-      - ME_CONFIG_MONGODB_ADMINPASSWORD=examplepassword
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=true  
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=${DB_USER}
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=${DB_PASSWORD}
       - ME_CONFIG_MONGODB_URL=${DB_TYPE}://${DB_USER}:${DB_PASSWORD}@mongo:${DB_PORT}/${DB_NAME}?authSource=admin
     networks:
       - app-network
