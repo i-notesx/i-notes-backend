@@ -10,6 +10,4 @@ service_name="backend"
 cd "$project_dir/$project_name"
 git pull
 
-cd "$project_dir"
-docker-compose build "$service_name"
-docker-compose up -d "$service_name"
+docker compose -f docker-compose.yml -f docker-compose-prod.yml up --build
