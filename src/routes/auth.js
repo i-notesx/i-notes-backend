@@ -3,7 +3,14 @@ import { login, register, logout } from '../controllers/auth.js'
 
 const router = express.Router()
 
-// 登录
+
+/**
+ * @swagger
+ * /users:
+ *   get:
+ *     summary: Retrieve a list of JSONPlaceholder users
+ *     description: Retrieve a list of users from JSONPlaceholder. Can be used to populate a list of fake users when prototyping or testing an API.
+ */
 router.post('/auth/login', login)
 
 // 注册

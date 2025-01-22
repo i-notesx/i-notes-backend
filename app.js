@@ -7,6 +7,8 @@ import noteRouter from "./src/routes/note.js";
 import authRouter from "./src/routes/auth.js";
 import loggerMiddleware from './src/middlewares/logger.js'
 import './src/config/db.js'
+import swaggerDocs from './swagger.js'
+
 
 const app = express();
 const PORT = env.PORT;
@@ -26,4 +28,6 @@ app.use(env.BASE_PATH, noteRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
+
+  swaggerDocs(app, PORT)
 });
