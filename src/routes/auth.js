@@ -5,11 +5,13 @@ const router = express.Router()
 
 
 /**
- * @swagger
- * /users:
+ * @openapi
+ * /auth/login:
  *   get:
- *     summary: Retrieve a list of JSONPlaceholder users
- *     description: Retrieve a list of users from JSONPlaceholder. Can be used to populate a list of fake users when prototyping or testing an API.
+ *     description: Welcome to swagger-jsdoc!
+ *     responses:
+ *       200:
+ *         description: Returns a mysterious string.
  */
 router.post('/auth/login', login)
 
